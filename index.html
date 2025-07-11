@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,6 @@
     .hidden {
       display: none;
     }
-    .visible {
-      display: block;
-    }
     input, button {
       font-size: 1em;
       padding: 0.5em;
@@ -29,7 +27,8 @@
     }
   </style>
 </head>
-<body>  <div id="initial-message">
+<body>
+  <div id="initial-message">
     <p><strong>Hola preciosa,</strong></p>
     <p>Después de todos estos días, aún hay poesía aquí para ti.</p>
     <div class="entry">
@@ -41,10 +40,9 @@
       <br>
       <button onclick="checkAccess()">Entrar</button>
     </div>
-  </div>  <div id="main-content" class="hidden">
-    <p>Y aquí estoy, haciendo polvo los caminos, haciendo polvo la distancia, haciendo polvo las dudas, haciendo polvo el polvo...</p>
-    <p>Bienvenida de nuevo preciosa, te he estado esperando y no hay que esperar más, es el tiempo de los dos.</p>
-    <hr>
+  </div>
+
+  <div id="main-content" class="hidden">
     <p><strong>Hola preciosa,</strong></p>
     <p>Después de todos estos días, aún hay poesía aquí para ti.</p>
     <p>Dijo Amalia Bautista una vez en Madrid, sabiendo que yo te iba a encontrar, que:</p>
@@ -56,7 +54,23 @@
     <p>Bienvenida de nuevo preciosa, te he estado esperando y no hay que esperar más, es el tiempo de los dos.</p>
     <p>Con amor.</p>
     <p><strong>Tu poeta. <span class="heart">♥️</span></strong></p>
-  </div>  <script>
+
+    <!-- StatCounter Tracking Code -->
+    <script type="text/javascript">
+      var sc_project=13150301; 
+      var sc_invisible=1; 
+      var sc_security="8759578e"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/13150301/0/8759578e/1/" alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of StatCounter Code -->
+  </div>
+
+  <script>
     function checkAccess() {
       const name = document.getElementById('name').value.trim().toLowerCase();
       const secret = document.getElementById('secret').value.trim();
@@ -68,5 +82,6 @@
         alert('Nombre o número de suerte incorrecto.');
       }
     }
-  </script></body>
+  </script>
+</body>
 </html>
