@@ -1,103 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puente 602</title>
-    <style>
-        body {
-            font-family: Georgia, serif;
-            background-color: #fdf6e3;
-            color: #333;
-            padding: 40px;
-            max-width: 800px;
-            margin: auto;
-        }
-        h1 {
-            font-size: 2.5em;
-            color: #6c4c3b;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6em;
-            margin-bottom: 20px;
-        }
-        input[type="text"], input[type="password"] {
-            padding: 10px;
-            margin: 10px 0;
-            width: 100%;
-            font-size: 1em;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 1em;
-            background-color: #6c4c3b;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .content {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Puente 602</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+    .hidden {
+      display: none;
+    }
+    .carta {
+      margin-top: 2rem;
+      text-align: left;
+      background: #fffbea;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
-    <h1>Hola preciosa,</h1>
-    <p>Después de todos estos días, aún hay poesía aquí para ti.</p>
+  <h1>Puente 602</h1>
+  <p>Ingresa tu nombre y la contraseña para continuar</p>
+  
+  <form id="loginForm">
+    <input type="text" id="nombre" placeholder="Tu nombre" required /><br/><br/>
+    <input type="password" id="clave" placeholder="Contraseña" required /><br/><br/>
+    <button type="submit">Entrar</button>
+  </form>
 
-    <p>Dijo Amalia Bautista una vez en Madrid, sabiendo que yo te iba a encontrar, que:</p>
-    <p><em>"si me dicen que estás al otro lado de un puente, por extraño que parezca que me esperes, yo cruzaré ese puente..."</em></p>
-
-    <p>Y aquí estoy, haciendo polvo los caminos, haciendo polvo la distancia, haciendo polvo las dudas, haciendo polvo el polvo...</p>
-
-    <p>Bienvenida de nuevo preciosa, te he estado esperando y no hay que esperar más, es el tiempo de los dos.</p>
-
-    <h3>¿Eres tú?</h3>
-    <p>Escribe tu nombre y nuestro número secreto para acceder:</p>
-    <input type="text" id="nombre" placeholder="Yo soy...">
-    <input type="password" id="clave" placeholder="Número secreto...">
-    <button onclick="validar()">Entrar</button>
-
-    <div class="content" id="contenido">
-        <h2>Te estaba esperando ♥️</h2>
-        <p>Gracias por venir. Este espacio está hecho solo para ti.</p>
+  <div id="bienvenida" class="hidden">
+    <h2>Bienvenida, <span id="nombreMostrado"></span> ♥️</h2>
+    <div class="carta" id="contenidoCarta">
+      <!-- Aquí va la carta -->
+      <p>Querida Sofía,</p>
+      <p>Esta es una carta que solo tú puedes leer. Su acceso está protegido por el número que nos une: 602.</p>
+      <p>Aquí podría ir todo el contenido íntimo, delicado y profundo que quieras decirle, sin temor a que otros lo vean.</p>
+      <p>Gracias por cruzar el puente.</p>
+      <p>Con amor,<br/>[Tu nombre]</p>
     </div>
-<div id="carta-container" style="display:none;">
-  <div class="carta">
-    <h2>Hola preciosa,</h2>
-    <p>Después de todos estos días, aún hay poesía aquí para ti.</p>
-
-    <p>Dijo Amalia Bautista una vez en Madrid, sabiendo que yo te iba a encontrar, que:</p>
-
-    <blockquote>
-      “Si me dicen que estás al otro lado de un puente, por extraño que parezca que me esperes, yo cruzaré ese puente. Dime cuál es el puente que separa tu vida de la mía, en qué hora negra, en qué ciudad lluviosa, en qué mundo sin luz está ese puente, yo lo cruzaré.”
-    </blockquote>
-
-    <p>Y aquí estoy, haciendo polvo los caminos, haciendo polvo la distancia, haciendo polvo las dudas, haciendo polvo el polvo. Aquí estoy con mis manos llenas de futuro, como las tenía cuando me dejaste; aquí sigo en pie porque el tiempo de los dos no ha terminado.</p>
-
-    <p>Porque estos días pasaron en ausencia como lo pediste, como he respetado tu decisión, como he cuidado tus emociones. No iré a ti hasta que no te encuentres bien para recibirme, pero iré, porque sé lo que tienes para mí y lo que hay aquí para ti.</p>
-
-    <p>Nuestro encuentro electrizante no fue casual, nuestro vínculo no es cualquiera, nuestra conexión no es efímera, nuestro bucle no es el de estar mudos, nuestro tiempo es el de estar: lado a lado y con las manos entrelazadas, como siempre estuvieron desde el primer día, porque no tienen vida propia.</p>
-
-    <p>Somos nosotros los que nos estábamos buscando y aún hoy sabemos que volveremos a encontrarnos, más firmes, más convencidos, más enamorados.</p>
-
-    <p><strong>Bienvenida de nuevo, preciosa.</strong> Te he estado esperando, y no hay que esperar más. Es el tiempo de los dos.</p>
-
-    <p><em>*Porque somos más que dos.*</em></p>
   </div>
-</div>
-    <script>
-        function validar() {
-            var nombre = document.getElementById('nombre').value.trim().toLowerCase();
-            var clave = document.getElementById('clave').value.trim();
-            if (clave === "602") {
-                document.getElementById('contenido').style.display = 'block';
-                alert("Nombre registrado: " + nombre);
-            } else {
-                alert("Número incorrecto.");
-            }
-        }
-    </script>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const bienvenida = document.getElementById('bienvenida');
+    const nombreMostrado = document.getElementById('nombreMostrado');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const clave = document.getElementById('clave').value.trim();
+
+      if (clave === "602") {
+        nombreMostrado.textContent = nombre;
+        bienvenida.classList.remove('hidden');
+        form.classList.add('hidden');
+      } else {
+        alert("Contraseña incorrecta.");
+      }
+    });
+  </script>
 </body>
 </html>
