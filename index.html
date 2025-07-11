@@ -6,62 +6,92 @@
   <title>Puente 602</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+      font-family: Georgia, serif;
+      background-color: #fdf6e3;
+      color: #333;
       padding: 2rem;
-      background-color: #f9f9f9;
+      text-align: center;
+    }
+    input, button {
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #6b4226;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
     .hidden {
       display: none;
     }
     .carta {
       margin-top: 2rem;
-      text-align: left;
-      background: #fffbea;
-      padding: 1rem;
+      padding: 1.5rem;
+      background-color: #fffdf6;
+      border: 1px solid #ddd;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
 <body>
-  <h1>Puente 602</h1>
-  <p>Ingresa tu nombre y la contraseña para continuar</p>
-  
-  <form id="loginForm">
-    <input type="text" id="nombre" placeholder="Tu nombre" required /><br/><br/>
-    <input type="password" id="clave" placeholder="Contraseña" required /><br/><br/>
+  <div id="inicio">
+    <h2>Hola preciosa,</h2>
+    <p>Después de todos estos días, aún hay poesía aquí para ti.</p>
+  </div>
+
+  <form id="formulario">
+    <p><strong>¿Eres tú?</strong></p>
+    <p>Escribe tu nombre y nuestro número secreto para acceder:</p>
+    <input type="text" id="nombre" placeholder="Tu nombre" required /><br/>
+    <input type="password" id="clave" placeholder="Contraseña" required /><br/>
     <button type="submit">Entrar</button>
   </form>
 
   <div id="bienvenida" class="hidden">
-    <h2>Bienvenida, <span id="nombreMostrado"></span> ♥️</h2>
-    <div class="carta" id="contenidoCarta">
-      <!-- Aquí va la carta -->
-      <p>Querida Sofía,</p>
-      <p>Esta es una carta que solo tú puedes leer. Su acceso está protegido por el número que nos une: 602.</p>
-      <p>Aquí podría ir todo el contenido íntimo, delicado y profundo que quieras decirle, sin temor a que otros lo vean.</p>
-      <p>Gracias por cruzar el puente.</p>
-      <p>Con amor,<br/>[Tu nombre]</p>
-    </div>
+    <h2>Te estaba esperando ❤️</h2>
+    <p>Gracias por venir. Este espacio está hecho solo para ti.</p>
+  </div>
+
+  <div id="carta" class="carta hidden">
+    <p>Querida Sofía,</p>
+    
+    <p>No sabía exactamente qué palabras escribirte… porque ninguna parece suficiente. Pero decidí escribirte igual, porque el silencio pesa más que el riesgo de equivocarse.</p>
+    
+    <p>He pensado en ti cada día, sin excepción. A veces con una sonrisa, otras con un nudo. A veces con calma, otras con preguntas. Pero siempre con amor.</p>
+    
+    <p>Este espacio existe porque todavía creo. Porque lo que construimos fue real, y porque lo que aún late en mí no se disuelve con el tiempo ni con la distancia.</p>
+    
+    <p>No estás obligada a decir nada. Solo quería que supieras que aún hay poesía aquí. Que este puente existe, y que estaré del otro lado si decides cruzarlo.</p>
+    
+    <p>Gracias por llegar hasta aquí.</p>
+
+    <p>Con amor,<br/>Tu poeta</p>
   </div>
 
   <script>
-    const form = document.getElementById('loginForm');
+    const form = document.getElementById('formulario');
     const bienvenida = document.getElementById('bienvenida');
-    const nombreMostrado = document.getElementById('nombreMostrado');
+    const carta = document.getElementById('carta');
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const nombre = document.getElementById('nombre').value.trim();
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
       const clave = document.getElementById('clave').value.trim();
 
       if (clave === "602") {
-        nombreMostrado.textContent = nombre;
         bienvenida.classList.remove('hidden');
+        carta.classList.remove('hidden');
         form.classList.add('hidden');
+        document.getElementById('inicio').classList.add('hidden');
       } else {
-        alert("Contraseña incorrecta.");
+        alert("Contraseña incorrecta. Intenta de nuevo.");
       }
     });
   </script>
