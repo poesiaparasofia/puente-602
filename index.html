@@ -1,99 +1,72 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Puente 602</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Sofía</title>
   <style>
     body {
-      font-family: Georgia, serif;
       background-color: #fdf6e3;
-      color: #333;
-      padding: 2rem;
-      text-align: center;
-    }
-    input, button {
-      padding: 0.5rem;
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background-color: #6b4226;
-      color: white;
-      border: none;
-      cursor: pointer;
+      font-family: 'Georgia', serif;
+      color: #2f2f2f;
+      padding: 2em;
     }
     .hidden {
       display: none;
     }
-    .carta {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      background-color: #fffdf6;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      text-align: left;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+    .visible {
+      display: block;
+    }
+    input, button {
+      font-size: 1em;
+      padding: 0.5em;
+      margin-top: 0.5em;
+    }
+    .entry {
+      margin-top: 2em;
+    }
+    .heart {
+      color: red;
     }
   </style>
 </head>
-<body>
-  <div id="inicio">
-    <h2>Hola preciosa,</h2>
+<body>  <div id="initial-message">
+    <p><strong>Hola preciosa,</strong></p>
     <p>Después de todos estos días, aún hay poesía aquí para ti.</p>
-  </div>
+    <div class="entry">
+      <p><strong>¿Eres tú?</strong></p>
+      <p>Escribe tu nombre y tu número de suerte para acceder:</p>
+      <input type="text" id="name" placeholder="Tu nombre">
+      <br>
+      <input type="password" id="secret" placeholder="Tu número de suerte">
+      <br>
+      <button onclick="checkAccess()">Entrar</button>
+    </div>
+  </div>  <div id="main-content" class="hidden">
+    <p>Y aquí estoy, haciendo polvo los caminos, haciendo polvo la distancia, haciendo polvo las dudas, haciendo polvo el polvo...</p>
+    <p>Bienvenida de nuevo preciosa, te he estado esperando y no hay que esperar más, es el tiempo de los dos.</p>
+    <hr>
+    <p><strong>Hola preciosa,</strong></p>
+    <p>Después de todos estos días, aún hay poesía aquí para ti.</p>
+    <p>Dijo Amalia Bautista una vez en Madrid, sabiendo que yo te iba a encontrar, que:</p>
+    <blockquote>
+      "si me dicen que estás al otro lado de un puente, por extraño que parezca que me esperes, yo cruzaré ese puente. Dime cuál es el puente que separa tu vida de la mía, en qué hora negra, en qué ciudad lluviosa, en qué mundo sin luz está ese puente, yo lo cruzaré".
+    </blockquote>
+    <p>Y aquí estoy, haciendo polvo los caminos, haciendo polvo la distancia, haciendo polvo las dudas, haciendo polvo el polvo, aquí estoy con mis manos llenas de futuro, como las tenía cuando me dejaste; aquí sigo en pie porque el tiempo de los dos no ha terminado, porque estos días pasaron en ausencia como lo pediste, como he respetado tu decisión, como he cuidado tus emociones, no iré a ti hasta que no te encuentres bien para recibirme, pero iré porque sé lo que tienes para mí y lo que hay aquí para ti.</p>
+    <p>Nuestro encuentro electrizante no fue casual, nuestro vínculo no es cualquiera, nuestra conexión no es efímera, nuestro bucle no es el de estar mudos, nuestro tiempo es el de estar, lado a lado y con las manos entrelazadas, como siempre estuvieron desde el primer día, porque no tienen vida propia, somos nosotros los que nos estábamos buscando y aún hoy sabemos que volveremos a encontrarnos, más firmes, más convencidos, más enamorados.</p>
+    <p>Bienvenida de nuevo preciosa, te he estado esperando y no hay que esperar más, es el tiempo de los dos.</p>
+    <p>Con amor.</p>
+    <p><strong>Tu poeta. <span class="heart">♥️</span></strong></p>
+  </div>  <script>
+    function checkAccess() {
+      const name = document.getElementById('name').value.trim().toLowerCase();
+      const secret = document.getElementById('secret').value.trim();
 
-  <form id="formulario">
-    <p><strong>¿Eres tú?</strong></p>
-    <p>Escribe tu nombre y nuestro número secreto para acceder:</p>
-    <input type="text" id="nombre" placeholder="Tu nombre" required /><br/>
-    <input type="password" id="clave" placeholder="Contraseña" required /><br/>
-    <button type="submit">Entrar</button>
-  </form>
-
-  <div id="bienvenida" class="hidden">
-    <h2>Te estaba esperando ❤️</h2>
-    <p>Gracias por venir. Este espacio está hecho solo para ti.</p>
-  </div>
-
-  <div id="carta" class="carta hidden">
-    <p>Querida Sofía,</p>
-    
-    <p>No sabía exactamente qué palabras escribirte… porque ninguna parece suficiente. Pero decidí escribirte igual, porque el silencio pesa más que el riesgo de equivocarse.</p>
-    
-    <p>He pensado en ti cada día, sin excepción. A veces con una sonrisa, otras con un nudo. A veces con calma, otras con preguntas. Pero siempre con amor.</p>
-    
-    <p>Este espacio existe porque todavía creo. Porque lo que construimos fue real, y porque lo que aún late en mí no se disuelve con el tiempo ni con la distancia.</p>
-    
-    <p>No estás obligada a decir nada. Solo quería que supieras que aún hay poesía aquí. Que este puente existe, y que estaré del otro lado si decides cruzarlo.</p>
-    
-    <p>Gracias por llegar hasta aquí.</p>
-
-    <p>Con amor,<br/>Tu poeta</p>
-  </div>
-
-  <script>
-    const form = document.getElementById('formulario');
-    const bienvenida = document.getElementById('bienvenida');
-    const carta = document.getElementById('carta');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const clave = document.getElementById('clave').value.trim();
-
-      if (clave === "602") {
-        bienvenida.classList.remove('hidden');
-        carta.classList.remove('hidden');
-        form.classList.add('hidden');
-        document.getElementById('inicio').classList.add('hidden');
+      if (name === 'sofia' && secret === '...') {
+        document.getElementById('initial-message').classList.add('hidden');
+        document.getElementById('main-content').classList.remove('hidden');
       } else {
-        alert("Contraseña incorrecta. Intenta de nuevo.");
+        alert('Nombre o número de suerte incorrecto.');
       }
-    });
-  </script>
-</body>
+    }
+  </script></body>
 </html>
