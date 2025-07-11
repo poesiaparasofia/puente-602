@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puente 602</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: #fdf6e3;
+            color: #333;
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #6c4c3b;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #6c4c3b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola preciosa,</h1>
+    <p>Después de todos estos días, aún hay poesía aquí para ti.</p>
+
+    <p>Dijo Amalia Bautista una vez en Madrid, sabiendo que yo te iba a encontrar, que:</p>
+    <p><em>"si me dicen que estás al otro lado de un puente, por extraño que parezca que me esperes, yo cruzaré ese puente..."</em></p>
+
+    <p>Y aquí estoy, haciendo polvo los caminos, haciendo polvo la distancia, haciendo polvo las dudas, haciendo polvo el polvo...</p>
+
+    <p>Bienvenida de nuevo preciosa, te he estado esperando y no hay que esperar más, es el tiempo de los dos.</p>
+
+    <h3>¿Eres tú?</h3>
+    <p>Escribe tu nombre y nuestro número secreto para acceder:</p>
+    <input type="text" id="nombre" placeholder="Yo soy...">
+    <input type="password" id="clave" placeholder="Número secreto...">
+    <button onclick="validar()">Entrar</button>
+
+    <div class="content" id="contenido">
+        <h2>Te estaba esperando ♥️</h2>
+        <p>Gracias por venir. Este espacio está hecho solo para ti.</p>
+    </div>
+
+    <script>
+        function validar() {
+            var nombre = document.getElementById('nombre').value.trim().toLowerCase();
+            var clave = document.getElementById('clave').value.trim();
+            if (clave === "602") {
+                document.getElementById('contenido').style.display = 'block';
+                alert("Nombre registrado: " + nombre);
+            } else {
+                alert("Número incorrecto.");
+            }
+        }
+    </script>
+</body>
+</html>
